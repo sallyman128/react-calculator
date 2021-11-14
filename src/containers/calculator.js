@@ -5,9 +5,7 @@ class Calculator extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentNumber: "",
-      firstNumber: "",
-      secondNumber: ""
+      input: "",
     }
   }
 
@@ -16,17 +14,21 @@ class Calculator extends React.Component {
     const eventID = e.target.id
     if (eventClasses.contains("calculator-number")) {
       this.setState(prevState => ({
-        currentNumber: prevState.currentNumber + e.target.innerText
+        input: prevState.input + e.target.innerText
       }))
     } else if (eventClasses.contains("calculator-operator")) {
       this.setState(prevState => ({
-        firstNumber: prevState.currentNumber,
-        currentNumber: ""
+        input: prevState.input + " " + e.target.innerText + " ",
       }))
     } else if (eventID === "calculator-clear") {
       this.setState({
-        currentNumber: ""
+        input: "",
       })
+    } else if (eventID === "calculator-equal") {
+      const result = eval(this.state.input)
+      this.setState(prevState => ({
+        input: prevState.input + " = " + Number.parseFloat(result).toFixed(2)
+      }))
     }
   }
 
@@ -36,11 +38,11 @@ class Calculator extends React.Component {
 
     if (isNumber) {
       this.setState(prevState => ({
-        currentNumber: prevState.currentNumber + e.key
+        input: prevState.input + e.key
       }))
     } else if (isBackspace) {
       this.setState(prevState => ({
-        currentNumber: prevState.currentNumber.slice(0,-1)
+        input: prevState.input.slice(0,-1)
       }))
     }
   }
@@ -50,8 +52,8 @@ class Calculator extends React.Component {
       <div>
         <table id="calculator" onClick={(e) => this.handleClick(e)}>
           <tr>
-            <td value="result" id="calculator-result" colSpan="3">
-              <input onKeyUp={(e) => this.handleKeyUp(e)} type='text' value={this.state.currentNumber} />
+            <td colSpan="3">
+              <input id="calculator-input" onKeyUp={(e) => this.handleKeyUp(e)} type='text' value={this.state.input} />
             </td>
             <td value="clear" id="calculator-clear">AC</td>
           </tr>
