@@ -3,15 +3,30 @@
   margin-right: auto;
   font-size: 40px;
   text-align: center;
-  width: 300px
+  width: 300px;
+  background-color: black;
+}
+
+#result {
+  color: white;
 }
 
 #equal {
   background-color: lightblue;
 }
 
+#equal:hover {
+  background-color: darkblue;
+  color: white
+}
+
 #clear {
   background-color: lightcoral;
+}
+
+#clear:hover {
+  background-color: red;
+  color: white
 }
 
 .number {

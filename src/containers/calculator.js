@@ -6,7 +6,8 @@ class Calculator extends React.Component {
     super();
     this.state = {
       currentNumber: "",
-      firstNumber: ""
+      firstNumber: "",
+      secondNumber: ""
     }
   }
 
