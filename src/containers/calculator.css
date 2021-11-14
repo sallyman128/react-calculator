@@ -1,8 +1,9 @@
 #calculator {
   margin-left: auto;
   margin-right: auto;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
+  width: 300px
 }
 
 #equal {
@@ -11,6 +12,10 @@
 
 .number {
   background-color: gray;
+}
+
+.button:hover {
+  background-color:red;
 }
 
 .operator {
