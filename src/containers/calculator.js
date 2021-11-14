@@ -10,15 +10,15 @@ class Calculator extends React.Component {
   }
 
   handleClick = (e) => {
-    this.setState({
-      currentNumber: 
-    })
+    this.setState(prevState => ({
+      currentNumber: prevState.currentNumber + e.target.innerText
+    }))
   }
 
   render() {
     return (
       <div>
-        <table id="calculator" onClick={() => this.handleClick()}>
+        <table id="calculator" onClick={(e) => this.handleClick(e)}>
           <tr>
             <td id="result" colSpan="3">{this.state.currentNumber}</td>
             <td id="clear" className="operator">AC</td>
