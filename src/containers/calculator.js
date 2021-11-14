@@ -38,6 +38,10 @@ class Calculator extends React.Component {
       this.setState(prevState => ({
         currentNumber: prevState.currentNumber + e.key
       }))
+    } else if (isBackspace) {
+      this.setState(prevState => ({
+        currentNumber: prevState.currentNumber.slice(0,-1)
+      }))
     }
   }
 
