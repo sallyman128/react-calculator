@@ -7,42 +7,45 @@
   background-color: black;
 }
 
-#result {
+#calculator-result {
   color: white;
 }
 
-#equal {
+#calculator-equal {
   background-color: lightblue;
 }
 
-#equal:hover {
+#calculator-equal:hover {
   background-color: darkblue;
   color: white
 }
 
-#clear {
+#calculator-clear {
   background-color: lightcoral;
 }
 
-#clear:hover {
+#calculator-clear:hover {
   background-color: red;
   color: white
 }
 
-.number {
+.calculator-number {
   background-color: gray;
 }
 
-.button:hover {
+.calculator-number:hover {
   background-color:green;
 }
 
-.operator {
+.calculator-operator {
   background-color: lightgray
 }
 
-table#calculator > tr > td {
-  width: 50px;
-  overflow: hidden;
-  white-space: nowrap;
+.calculator-operator:hover {
+  background-color: green;
+}
+
+td[type=button] {
+  padding: 5px;
+  margin: 10px
 }
