@@ -1,18 +1,14 @@
 #calculator {
   margin-left: auto;
   margin-right: auto;
-  font-size: 40px;
   text-align: center;
-  width: 300px;
   background-color: black;
 }
 
 #calculator-input {
   color: white;
-  height: fit-content;
   background-color: black;
-  border: none;
-  font-size: 100%;
+  border: none;  
 }
 
 #calculator-equal {
@@ -51,5 +47,9 @@
 
 td[type=button] {
   padding: 5px;
-  margin: 10px
+}
+
+table#calculator > tr > td {
+  /* column-width: 20pt ; */
+  width: 20pt;
 }
