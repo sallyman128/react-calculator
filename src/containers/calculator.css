@@ -7,8 +7,12 @@
   background-color: black;
 }
 
-#calculator-result {
+#calculator-input {
   color: white;
+  height: fit-content;
+  background-color: black;
+  border: none;
+  font-size: 100%;
 }
 
 #calculator-equal {
