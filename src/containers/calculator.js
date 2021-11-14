@@ -1,13 +1,27 @@
 import React from "react";
+import "./calculator.css"
 
 class Calculator extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      currentNumber: "",
+    }
+  }
+
+  handleClick = (e) => {
+    this.setState({
+      currentNumber: 
+    })
+  }
+
   render() {
     return (
       <div>
-        <table id="calculator">
+        <table id="calculator" onClick={() => this.handleClick()}>
           <tr>
-            <td id="result" colSpan="3">Result field</td>
-            <td id="clear">AC</td>
+            <td id="result" colSpan="3">{this.state.currentNumber}</td>
+            <td id="clear" className="operator">AC</td>
           </tr>
           <tr>
             <td id="1" className="number">1</td>

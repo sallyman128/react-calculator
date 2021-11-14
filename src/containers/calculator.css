@@ -1,0 +1,19 @@
+#calculator {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+#equal {
+  background-color: lightblue;
+}
+
+.number {
+  background-color: gray;
+}
+
+.operator {
+  background-color: lightgray
+}
+
