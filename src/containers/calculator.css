@@ -34,9 +34,15 @@
 }
 
 .button:hover {
-  background-color:red;
+  background-color:green;
 }
 
 .operator {
   background-color: lightgray
+}
+
+table#calculator > tr > td {
+  width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
 }
