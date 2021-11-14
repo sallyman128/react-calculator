@@ -6,13 +6,27 @@ class Calculator extends React.Component {
     super();
     this.state = {
       currentNumber: "",
+      firstNumber: ""
     }
   }
 
   handleClick = (e) => {
-    this.setState(prevState => ({
-      currentNumber: prevState.currentNumber + e.target.innerText
-    }))
+    const eventClasses = e.target.classList
+    const eventID = e.target.id
+    if (eventClasses.contains("number")) {
+      this.setState(prevState => ({
+        currentNumber: prevState.currentNumber + e.target.innerText
+      }))
+    } else if (eventClasses.contains("operator")) {
+      this.setState(prevState => ({
+        firstNumber: prevState.currentNumber,
+        currentNumber: ""
+      }))
+    } else if (eventID === "clear") {
+      this.setState({
+        currentNumber: ""
+      })
+    }
   }
 
   render() {
@@ -21,7 +35,7 @@ class Calculator extends React.Component {
         <table id="calculator" onClick={(e) => this.handleClick(e)}>
           <tr>
             <td id="result" colSpan="3">{this.state.currentNumber}</td>
-            <td id="clear" className="operator button">AC</td>
+            <td id="clear" className="button">AC</td>
           </tr>
           <tr>
             <td id="1" className="number button">1</td>
