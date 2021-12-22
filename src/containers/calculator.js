@@ -6,6 +6,7 @@ class Calculator extends React.Component {
     super();
     this.state = {
       input: "",
+      history: []
     }
   }
 
@@ -27,8 +28,12 @@ class Calculator extends React.Component {
     } else if (eventID === "calculator-equal") {
       const result = eval(this.state.input)
       this.setState(prevState => ({
-        input: prevState.input + " = " + Number.parseFloat(result).toFixed(2)
+        input: prevState.input + " = " + Number.parseFloat(result).toFixed(2),
+        history: [...prevState.history, prevState.input + " = " + Number.parseFloat(result).toFixed(2)]
       }))
+      // this.setState({
+
+      // })
     }
   }
 
@@ -82,6 +87,9 @@ class Calculator extends React.Component {
             <td type="button" value="+" className="calculator-operator">+</td>
           </tr>
         </table>
+        <ul>
+          {this.state.history.map( calculation => <li>{calculation}</li>)}
+        </ul>
       </div>
     )
   }
