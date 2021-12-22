@@ -28,12 +28,9 @@ class Calculator extends React.Component {
     } else if (eventID === "calculator-equal") {
       const result = eval(this.state.input)
       this.setState(prevState => ({
-        input: prevState.input + " = " + Number.parseFloat(result).toFixed(2),
+        input: "",
         history: [...prevState.history, prevState.input + " = " + Number.parseFloat(result).toFixed(2)]
       }))
-      // this.setState({
-
-      // })
     }
   }
 
