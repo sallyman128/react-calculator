@@ -1,5 +1,6 @@
 import React from "react";
 import "./calculator.css"
+import History from "./history";
 
 class Calculator extends React.Component {
   constructor() {
